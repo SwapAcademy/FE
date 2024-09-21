@@ -83,3 +83,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .mentor-nav {
+    @apply flex items-center gap-2 px-2 py-3 hover:bg-sky-500 hover:text-white rounded-lg transition ease-in-out;
+  }
+}

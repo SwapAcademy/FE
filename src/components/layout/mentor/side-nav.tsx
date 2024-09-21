@@ -1,56 +1,117 @@
+'use client';
+
+import { Separator } from '@/components/ui/separator';
+import clsx from 'clsx';
+import {
+  Bookmark,
+  BookMarked,
+  CircleHelp,
+  Clapperboard,
+  FlagTriangleRight,
+  LayoutDashboard,
+  Medal,
+  Radio,
+  Settings,
+} from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 let navItems = [
   {
     name: 'Courses',
     href: '/mentor/courses',
+    icon: BookMarked,
   },
   {
     name: 'Live Courses',
     href: '/mentor/live-courses',
+    icon: Radio,
   },
   {
     name: 'Learning Progress',
     href: '/mentor/learning-progress',
+    icon: FlagTriangleRight,
   },
   {
     name: 'My Points',
     href: '/mentor/my-points',
+    icon: Medal,
   },
   {
     name: 'Bookmarks',
     href: '/mentor/bookmarks',
+    icon: Bookmark,
   },
 ];
 
 export default function SideNav() {
+  const pathname = usePathname();
+
   return (
-    <div className="space-y-8 w-1/5">
+    <div className="space-y-8 w-1/6 p-6 text-slate-600 font-medium">
       <Logo />
-      <nav>
-        <ul className="space-y-4">
-          <li>
-            <Link href="/mentor/dashboard">Dashboard</Link>
-          </li>
-          <div>
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <Link href={item.href}>{item.name}</Link>
-              </li>
-            ))}
-          </div>
-          <li>
-            <Link href="/mentor/studio">Mentor Studio</Link>
-          </li>
-          <div>
-            <li>
-              <Link href="/mentor/settings">Settings</Link>
-            </li>
-            <li>
-              <Link href="/mentor/help">Help</Link>
-            </li>
-          </div>
-        </ul>
+      <nav className="flex flex-col gap-8">
+        <Link
+          className={clsx(
+            'group mentor-nav',
+            pathname === '/mentor/dashboard' ? 'bg-sky-500 text-white' : ''
+          )}
+          href="/mentor/dashboard"
+        >
+          <LayoutDashboard />
+          <span>Dashboard</span>
+        </Link>
+        <Separator />
+        <div className="flex flex-col gap-6">
+          {navItems.map((item, index) => (
+            <Link
+              key={index}
+              className={clsx(
+                'group mentor-nav',
+                pathname === item.href ? 'bg-sky-500 text-white' : ''
+              )}
+              href={item.href}
+            >
+              <item.icon />
+              <span>{item.name}</span>
+            </Link>
+          ))}
+        </div>
+        <Separator />
+        <Link
+          className={clsx(
+            'group mentor-nav',
+            pathname === '/mentor/studio' ? 'bg-sky-500 text-white' : ''
+          )}
+          href="/mentor/studio"
+        >
+          <Clapperboard />
+          <span>Mentor Studio</span>
+        </Link>
+        <Separator />
+        <div className="flex flex-col gap-6">
+          <Link
+            className={clsx(
+              'group mentor-nav',
+              pathname === '/mentor/settings' ? 'bg-sky-500 text-white' : ''
+            )}
+            href="/mentor/settings"
+          >
+            <Settings />
+            <span>Settings</span>
+          </Link>
+          <Link
+            className={clsx(
+              'group mentor-nav',
+              pathname === '/mentor/help' ? 'bg-sky-500 text-white' : ''
+            )}
+            href="/mentor/help"
+          >
+            <CircleHelp />
+            <span>Help</span>
+          </Link>
+        </div>
+        <Separator />
       </nav>
     </div>
   );
