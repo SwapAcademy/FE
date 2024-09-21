@@ -48,9 +48,10 @@ export default function SideNav() {
   const pathname = usePathname();
 
   return (
-    <div className="space-y-8 w-1/6 p-6 text-slate-600 font-medium">
+    <div className="space-y-6 w-1/6 p-6 text-slate-600 font-medium">
       <Logo />
-      <nav className="flex flex-col gap-8">
+      <nav className="flex flex-col gap-2">
+        <Separator />
         <Link
           className={clsx(
             'group mentor-nav',
@@ -58,11 +59,11 @@ export default function SideNav() {
           )}
           href="/mentor/dashboard"
         >
-          <LayoutDashboard />
+          <LayoutDashboard size={20} />
           <span>Dashboard</span>
         </Link>
         <Separator />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
           {navItems.map((item, index) => (
             <Link
               key={index}
@@ -72,7 +73,7 @@ export default function SideNav() {
               )}
               href={item.href}
             >
-              <item.icon />
+              <item.icon size={20} />
               <span>{item.name}</span>
             </Link>
           ))}
@@ -85,11 +86,11 @@ export default function SideNav() {
           )}
           href="/mentor/studio"
         >
-          <Clapperboard />
+          <Clapperboard size={20} />
           <span>Mentor Studio</span>
         </Link>
         <Separator />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
           <Link
             className={clsx(
               'group mentor-nav',
@@ -97,7 +98,7 @@ export default function SideNav() {
             )}
             href="/mentor/settings"
           >
-            <Settings />
+            <Settings size={20} />
             <span>Settings</span>
           </Link>
           <Link
@@ -107,7 +108,7 @@ export default function SideNav() {
             )}
             href="/mentor/help"
           >
-            <CircleHelp />
+            <CircleHelp size={20} />
             <span>Help</span>
           </Link>
         </div>
