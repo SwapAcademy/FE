@@ -1,14 +1,17 @@
 import {
   LiveStreamCard,
+  LiveStreamingCard,
   MentoringCard,
+  PointsEarnedCard,
   UploadVideoCard,
+  VideoPublishedCard,
 } from '@/components/mentor/studio/cards';
 import ScheduleCard from '@/components/mentor/studio/schedule-card';
 
 export default function Page() {
   return (
     <div className="p-6 space-y-5">
-      <h1 className="font-semibold text-lg">Mentor Studio</h1>
+      <h1 className="font-semibold text-xl">Mentor Studio</h1>
       <div className="flex gap-6">
         <MentoringCard />
         <UploadVideoCard />
@@ -16,6 +19,11 @@ export default function Page() {
       </div>
       <div className="flex gap-6">
         <ScheduleCard />
+        <div className="w-1/4 flex flex-col gap-2">
+          <VideoPublishedCard />
+          <PointsEarnedCard />
+          <LiveStreamingCard />
+        </div>
       </div>
     </div>
   );

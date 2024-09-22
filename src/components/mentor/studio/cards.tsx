@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Bookmark } from 'lucide-react';
 
 export function MentoringCard() {
   return (
@@ -53,6 +54,62 @@ export function LiveStreamCard() {
           </Button>
         </div>
         <LiveStreamLogo />
+      </CardContent>
+    </Card>
+  );
+}
+
+export function VideoPublishedCard() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="font-medium flex gap-2">
+          <div className="bg-sky-500 rounded-full p-[3px] text-white">
+            <Bookmark size={10} />
+          </div>
+          <span>Video Published</span>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <h1 className="text-2xl font-semibold">12</h1>
+        <p className="text-gray-500">Videos Completed</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+export function PointsEarnedCard() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="font-medium flex gap-2">
+          <div className="bg-sky-500 rounded-full p-[3px] text-white">
+            <Bookmark size={10} />
+          </div>
+          <span>Points Earned</span>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <h1 className="text-2xl font-semibold">12</h1>
+        <p className="text-gray-500">Videos Completed</p>
+      </CardContent>
+    </Card>
+  );
+}
+export function LiveStreamingCard() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="font-medium flex gap-2">
+          <div className="bg-sky-500 rounded-full p-[3px] text-white">
+            <Bookmark size={10} />
+          </div>
+          <span>Live Streaming</span>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <h1 className="text-2xl font-semibold">12</h1>
+        <p className="text-gray-500">Videos Completed</p>
       </CardContent>
     </Card>
   );

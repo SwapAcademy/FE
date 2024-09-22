@@ -16,7 +16,7 @@ import React from 'react';
 
 export default function ScheduleCard() {
   return (
-    <Card>
+    <Card className="w-3/4">
       <CardHeader>
         <CardTitle className="text-xl">Mentoring Schedule</CardTitle>
       </CardHeader>
@@ -68,9 +68,9 @@ let placeholder = [
 function ScheduleTable() {
   return (
     <Table>
-      <TableHeader>
-        <TableRow className="bg-gray-50">
-          <TableHead>Date</TableHead>
+      <TableHeader className="bg-gray-50 px-6 py-2">
+        <TableRow>
+          <TableHead className="p-6">Date</TableHead>
           <TableHead>Time</TableHead>
           <TableHead>Mentee</TableHead>
           <TableHead>Action</TableHead>
@@ -79,9 +79,9 @@ function ScheduleTable() {
       <TableBody>
         {placeholder.map((item, index) => (
           <TableRow key={index}>
-            <TableCell>{item.date}</TableCell>
+            <TableCell className="p-6">{item.date}</TableCell>
             <TableCell>{item.time}</TableCell>
-            <TableCell>{item.mentee}</TableCell>
+            <TableCell className="text-slate-500">{item.mentee}</TableCell>
             <TableCell>
               <Button className="bg-sky-500 hover:bg-sky-600 text-white font-medium">
                 <SquarePen size={12} />
