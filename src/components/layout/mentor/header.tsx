@@ -8,7 +8,7 @@ import React from 'react';
 
 export default function Header() {
   return (
-    <div className="bg-white w-full p-6 flex justify-between items-center">
+    <header className="bg-white w-full p-6 flex justify-between items-center">
       <SearchInput placeholder="Search..." />
       <div className="flex items-center gap-3">
         <Button
@@ -27,7 +27,7 @@ export default function Header() {
           <AvatarFallback>JD</AvatarFallback>
         </Avatar>
       </div>
-    </div>
+    </header>
   );
 }
 
@@ -40,7 +40,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
     return (
       <div className="relative w-96 font-medium">
         <Search
-          className="absolute top-1/2 left-4 transform -translate-y-1/2  text-gray-500"
+          className="absolute top-1/2 left-3 transform -translate-y-1/2  text-gray-500"
           size={16}
         />
         <Input

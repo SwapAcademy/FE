@@ -3,6 +3,7 @@ import {
   MentoringCard,
   UploadVideoCard,
 } from '@/components/mentor/studio/cards';
+import ScheduleCard from '@/components/mentor/studio/schedule-card';
 
 export default function Page() {
   return (
@@ -12,6 +13,9 @@ export default function Page() {
         <MentoringCard />
         <UploadVideoCard />
         <LiveStreamCard />
+      </div>
+      <div className="flex gap-6">
+        <ScheduleCard />
       </div>
     </div>
   );
