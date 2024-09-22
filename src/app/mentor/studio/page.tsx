@@ -7,6 +7,8 @@ import {
   VideoPublishedCard,
 } from '@/components/mentor/studio/cards';
 import ScheduleCard from '@/components/mentor/studio/schedule-card';
+import TopCoursesCard from '@/components/mentor/studio/top-courses-card';
+import TopRatedCard from '@/components/mentor/studio/top-rated-card';
 
 export default function Page() {
   return (
@@ -24,6 +26,10 @@ export default function Page() {
           <PointsEarnedCard />
           <LiveStreamingCard />
         </div>
+      </div>
+      <div className="flex gap-6">
+        <TopRatedCard />
+        <TopCoursesCard />
       </div>
     </div>
   );
