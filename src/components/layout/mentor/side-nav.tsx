@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import {
   Bookmark,
   BookMarked,
+  ChartNoAxesCombined,
   CircleHelp,
   Clapperboard,
   FlagTriangleRight,
@@ -12,9 +13,13 @@ import {
   Medal,
   Radio,
   Settings,
+  TvMinimalPlay,
+  Upload,
+  UsersRound,
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 let navItems = [
   {
@@ -44,6 +49,29 @@ let navItems = [
   },
 ];
 
+let mentorNav = [
+  {
+    name: 'Upload Course',
+    href: '/mentor/studio/upload-course',
+    icon: Upload,
+  },
+  {
+    name: 'My Videos',
+    href: '/mentor/studio/my-videos',
+    icon: TvMinimalPlay,
+  },
+  {
+    name: '1-on-1 Mentoring',
+    href: '/mentor/studio/mentoring',
+    icon: UsersRound,
+  },
+  {
+    name: 'Analytics',
+    href: '/mentor/studio/analytics',
+    icon: ChartNoAxesCombined,
+  },
+];
+
 export default function SideNav() {
   const pathname = usePathname();
 
@@ -63,7 +91,13 @@ export default function SideNav() {
           <span>Dashboard</span>
         </Link>
         <Separator />
-        <div className="flex flex-col gap-2">
+        <div
+          className={clsx(
+            pathname.startsWith('/mentor/studio')
+              ? 'hidden'
+              : 'flex flex-col gap-2'
+          )}
+        >
           {navItems.map((item, index) => (
             <Link
               key={index}
@@ -77,8 +111,8 @@ export default function SideNav() {
               <span>{item.name}</span>
             </Link>
           ))}
+          <Separator />
         </div>
-        <Separator />
         <Link
           className={clsx(
             'group mentor-nav',
@@ -87,8 +121,25 @@ export default function SideNav() {
           href="/mentor/studio"
         >
           <Clapperboard size={20} />
-          <span>Mentor Studio</span>
+          <div className="w-full flex justify-between items-center">
+            <span>Mentor Studio</span>
+          </div>
         </Link>
+        <div className="flex flex-col gap-2 ml-8">
+          {mentorNav.map((item, index) => (
+            <Link
+              key={index}
+              className={clsx(
+                'group mentor-nav',
+                pathname === item.href ? 'bg-sky-500 text-white' : ''
+              )}
+              href={item.href}
+            >
+              <item.icon size={20} />
+              <span>{item.name}</span>
+            </Link>
+          ))}
+        </div>
         <Separator />
         <div className="flex flex-col gap-2">
           <Link
