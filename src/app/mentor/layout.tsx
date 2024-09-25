@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex">
       <SideNav />
-      <section className="w-5/6 bg-gray-100">
+      <section className="w-[82%] bg-gray-100">
         <Header />
         {children}
       </section>
