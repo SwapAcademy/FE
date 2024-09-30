@@ -26,11 +26,11 @@ export default function TopCoursesCard() {
 let placeholder = [
   {
     title: 'Dasar-dasar Belajar Pemrograman Python',
-    redemptions: 0,
+    redemptions: 2100,
   },
   {
     title: 'Dasar-dasar Belajar Pemrograman Python',
-    redemptions: 0,
+    redemptions: 670,
   },
   {
     title: 'Dasar-dasar Belajar Pemrograman Python',
@@ -57,7 +57,9 @@ function CoursesTable() {
           <TableRow key={index}>
             <TableCell className="p-6">{index + 1}</TableCell>
             <TableCell>{course.title}</TableCell>
-            <TableCell>{course.redemptions}</TableCell>
+            <TableCell className="text-gray-500">
+              {course.redemptions}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

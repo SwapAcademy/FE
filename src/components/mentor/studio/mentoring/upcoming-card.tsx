@@ -66,7 +66,7 @@ function UpcomingTable() {
         </TableHeader>
         <TableBody>
           {placeholder.map((item, index) => (
-            <TableRow>
+            <TableRow key={index}>
               <TableCell className="p-6">{index + 1}</TableCell>
               <TableCell>{item.date}</TableCell>
               <TableCell>{item.time}</TableCell>

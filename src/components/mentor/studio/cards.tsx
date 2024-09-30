@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bookmark } from 'lucide-react';
+import { Medal, RadioTower, TvMinimalPlay } from 'lucide-react';
 
 export function MentoringCard() {
   return (
@@ -64,15 +64,15 @@ export function VideoPublishedCard() {
     <Card>
       <CardHeader>
         <CardTitle className="font-medium flex gap-2">
-          <div className="bg-sky-500 rounded-full p-[3px] text-white">
-            <Bookmark size={10} />
+          <div className="bg-sky-200 rounded-full p-1 text-sky-500">
+            <TvMinimalPlay size={10} />
           </div>
           <span>Video Published</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <h1 className="text-2xl font-semibold">12</h1>
-        <p className="text-gray-500">Videos Completed</p>
+        <h1 className="text-2xl font-semibold">21</h1>
+        <p className="text-gray-500">Videos Published</p>
       </CardContent>
     </Card>
   );
@@ -83,14 +83,14 @@ export function PointsEarnedCard() {
     <Card>
       <CardHeader>
         <CardTitle className="font-medium flex gap-2">
-          <div className="bg-sky-500 rounded-full p-[3px] text-white">
-            <Bookmark size={10} />
+          <div className="bg-sky-200 rounded-full p-1 text-sky-500">
+            <Medal size={10} />
           </div>
           <span>Points Earned</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <h1 className="text-2xl font-semibold">12</h1>
+        <h1 className="text-2xl font-semibold">120</h1>
         <p className="text-gray-500">Videos Completed</p>
       </CardContent>
     </Card>
@@ -101,15 +101,15 @@ export function LiveStreamingCard() {
     <Card>
       <CardHeader>
         <CardTitle className="font-medium flex gap-2">
-          <div className="bg-sky-500 rounded-full p-[3px] text-white">
-            <Bookmark size={10} />
+          <div className="bg-sky-200 rounded-full p-1 text-sky-500">
+            <RadioTower size={10} />
           </div>
           <span>Live Streaming</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <h1 className="text-2xl font-semibold">12</h1>
-        <p className="text-gray-500">Videos Completed</p>
+        <h1 className="text-2xl font-semibold">6</h1>
+        <p className="text-gray-500">Live Streaming</p>
       </CardContent>
     </Card>
   );

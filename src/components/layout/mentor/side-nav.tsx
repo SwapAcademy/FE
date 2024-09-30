@@ -68,11 +68,6 @@ let mentorNav = [
     icon: UsersRound,
   },
   {
-    name: 'Livestream',
-    href: '/mentor/studio/livestream',
-    icon: RadioTower,
-  },
-  {
     name: 'Analytics',
     href: '/mentor/studio/analytics',
     icon: ChartNoAxesCombined,
