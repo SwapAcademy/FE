@@ -1,9 +1,9 @@
 import Footer from "@/components/footer";
 import BenefitsCard from "@/components/ui/benefits-card";
 import { Button } from "@/components/ui/button";
+import Card from "@/components/ui/custom-card";
 import CardCourses from "@/components/ui/card-courses";
 import Carousel from "@/components/ui/carousel";
-import Card from "@/components/ui/custom-card";
 import { Input } from "@/components/ui/input";
 import { course } from "@/data";
 import { benefits } from "@/data";
