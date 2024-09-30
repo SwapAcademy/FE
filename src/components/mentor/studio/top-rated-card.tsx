@@ -27,12 +27,12 @@ let placeholder = [
   {
     title: 'Dasar-dasar Belajar Pemrograman Python',
     rating: 4.9,
-    reviews: 0,
+    reviews: 1200,
   },
   {
     title: 'Dasar-dasar Belajar Pemrograman Python',
     rating: 4.9,
-    reviews: 0,
+    reviews: 500,
   },
   {
     title: 'Dasar-dasar Belajar Pemrograman Python',
@@ -62,8 +62,8 @@ function CoursesTable() {
           <TableRow key={index}>
             <TableCell className="p-6">{index + 1}</TableCell>
             <TableCell>{course.title}</TableCell>
-            <TableCell>{course.rating}</TableCell>
-            <TableCell>{course.reviews}</TableCell>
+            <TableCell>⭐ {course.rating}</TableCell>
+            <TableCell className="text-gray-500">{course.reviews}</TableCell>
           </TableRow>
         ))}
       </TableBody>
