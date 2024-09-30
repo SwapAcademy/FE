@@ -12,7 +12,7 @@ export default function TopCoursesCard() {
   return (
     <Card className="w-1/2">
       <CardHeader>
-        <CardTitle>Top Courses Redeemd</CardTitle>
+        <CardTitle>Top Courses Redeemed</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="rounded-lg border">

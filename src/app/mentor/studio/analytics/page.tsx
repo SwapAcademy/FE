@@ -5,6 +5,8 @@ import {
   TotalSession,
   TotalVideosCard,
 } from '@/components/mentor/studio/analytics/total-cards';
+import TopCoursesCard from '@/components/mentor/studio/top-courses-card';
+import TopRatedCard from '@/components/mentor/studio/top-rated-card';
 
 export default function Page() {
   return (
@@ -16,6 +18,10 @@ export default function Page() {
         <TotalSession />
         <PointsChart />
         <MentoringChart />
+      </div>
+      <div className="flex gap-6">
+        <TopRatedCard />
+        <TopCoursesCard />
       </div>
     </div>
   );
