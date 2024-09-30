@@ -52,12 +52,16 @@ export default function LandingPage() {
             Contact
           </Link>
         </nav>
-        <Button className="ml-4 text-sky-500 border-sky-500" variant="outline">
-          Login
-        </Button>
-        <Button className="ml-4 bg-sky-500 text-white" variant="outline">
-          Get Started
-        </Button>
+        <Link href={"/signin"}>
+          <Button className="ml-4 text-sky-500 border-sky-500" variant="outline">
+            Login
+          </Button>
+        </Link>
+        <Link href={"/signup"}>
+          <Button className="ml-4 bg-sky-500 text-white" variant="outline">
+            Get Started
+          </Button>
+        </Link>
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-24 xl:py-24">
