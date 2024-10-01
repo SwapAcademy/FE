@@ -1,6 +1,6 @@
-import HistoryCard from '@/components/mentor/studio/mentoring/history-card';
-import TimelineCard from '@/components/mentor/studio/mentoring/timeline-card';
-import UpcomingCard from '@/components/mentor/studio/mentoring/upcoming-card';
+import HistoryCard from '@/components/mentor/mentoring/history-card';
+import TimelineCard from '@/components/mentor/mentoring/timeline-card';
+import UpcomingCard from '@/components/mentor/mentoring/upcoming-card';
 
 export default function Page() {
   return (
