@@ -58,3 +58,51 @@ export const benefits = [
     description: "flexible Mentoring",
   },
 ];
+
+export const myProgres = [
+  {
+    id: 1,
+    icon: "/progress_1.svg",
+    title: "Time Watched",
+    progress: "50 Hours",
+    description: "Video course bookmarked",
+  },
+  {
+    id: 2,
+    icon: "/progress_2.svg",
+    title: "Upcoming Mentoring",
+    progress: "2 Session",
+    description: "Mentoring Session",
+  },
+  {
+    id: 3,
+    icon: "/progress_3.svg",
+    title: "Video Completed",
+    progress: "12 Videos",
+    description: "Video Completed",
+  },
+];
+
+export const redeemedCourse = [
+  {
+    id: 1,
+    icon: "/redeemed_1.svg",
+    course: "Pengembangan Web dengan React JS Untuk Pemula",
+    date: "10 Aug 2024",
+    points: "-120 pts",
+  },
+  {
+    id: 2,
+    icon: "/redeemed_1.svg",
+    course: "Pengembangan Web dengan Aplikasi Mobile untuk Pemula",
+    date: "10 Aug 2024",
+    points: "-120 pts",
+  },
+  {
+    id: 3,
+    icon: "/redeemed_1.svg",
+    course: "Belajar Motion Graphic dan Animation di After EfFect",
+    date: "10 Aug 2024",
+    points: "-120 pts",
+  },
+];
