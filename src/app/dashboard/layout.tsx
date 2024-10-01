@@ -1,5 +1,5 @@
-import Header from '@/components/layout/mentor/header';
-import SideNav from '@/components/layout/mentor/side-nav';
+import Header from '@/components/layout/header';
+import SideNav from '@/components/layout/side-nav';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

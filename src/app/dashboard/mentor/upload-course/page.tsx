@@ -1,5 +1,5 @@
-import UploadVideoCard from '@/components/mentor/studio/upload-course/upload-video-card';
-import VideoDetailsCard from '@/components/mentor/studio/upload-course/video-details-card';
+import UploadVideoCard from '@/components/mentor/upload-course/upload-video-card';
+import VideoDetailsCard from '@/components/mentor/upload-course/video-details-card';
 
 export default function Page() {
   return (

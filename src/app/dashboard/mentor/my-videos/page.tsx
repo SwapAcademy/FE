@@ -1,4 +1,4 @@
-import MyVideosTable from '@/components/mentor/studio/my-videos/my-videos-table';
+import MyVideosTable from '@/components/mentor/my-videos/my-videos-table';
 import { Card, CardHeader } from '@/components/ui/card';
 
 export default function Page() {
