@@ -39,7 +39,7 @@ let placeholder = [
 
 export default function UpcomingCard() {
   return (
-    <Card className="w-full">
+    <Card className="col-span-3">
       <CardHeader>
         <CardTitle>Upcoming Mentoring</CardTitle>
       </CardHeader>

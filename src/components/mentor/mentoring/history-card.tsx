@@ -47,7 +47,7 @@ let placeholder = [
 
 export default function HistoryCard() {
   return (
-    <Card className="w-full">
+    <Card className="col-span-4">
       <CardHeader>
         <CardTitle>Mentoring History</CardTitle>
       </CardHeader>

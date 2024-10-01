@@ -10,7 +10,7 @@ export default function TimelineCard() {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
-    <Card>
+    <Card className="col-span-1">
       <CardHeader className="flex-row items-center justify-between">
         <CardTitle className="text-xl font-semibold">Timeline</CardTitle>
         <Button className="bg-blue-500 hover:bg-blue-500">
@@ -18,7 +18,7 @@ export default function TimelineCard() {
           <span className="ml-1">Edit</span>
         </Button>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex items-center justify-center">
         <Calendar
           mode="single"
           selected={date}
