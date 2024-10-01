@@ -14,20 +14,18 @@ export default function Page() {
   return (
     <div className="p-6 space-y-5">
       <h1 className="font-semibold text-xl">Mentor Studio</h1>
-      <div className="flex gap-6">
+      <div className="grid grid-cols-6 gap-6">
         <MentoringCard />
         <UploadVideoCard />
         <LiveStreamCard />
-      </div>
-      <div className="flex gap-6">
-        <ScheduleCard />
-        <div className="w-1/4 flex flex-col gap-2">
-          <VideoPublishedCard />
-          <PointsEarnedCard />
-          <LiveStreamingCard />
+        <div className="grid grid-cols-subgrid col-span-6">
+          <ScheduleCard />
+          <div className="col-span-2 space-y-3">
+            <VideoPublishedCard />
+            <PointsEarnedCard />
+            <LiveStreamingCard />
+          </div>
         </div>
-      </div>
-      <div className="flex gap-6">
         <TopRatedCard />
         <TopCoursesCard />
       </div>

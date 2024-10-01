@@ -10,7 +10,7 @@ import {
 
 export default function TopRatedCard() {
   return (
-    <Card className="w-1/2">
+    <Card className="col-span-3">
       <CardHeader>
         <CardTitle>Top Rated Courses</CardTitle>
       </CardHeader>

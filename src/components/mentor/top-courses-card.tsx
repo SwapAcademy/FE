@@ -10,7 +10,7 @@ import {
 
 export default function TopCoursesCard() {
   return (
-    <Card className="w-1/2">
+    <Card className="col-span-3">
       <CardHeader>
         <CardTitle>Top Courses Redeemed</CardTitle>
       </CardHeader>
