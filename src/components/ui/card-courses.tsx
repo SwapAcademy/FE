@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface CardCoursesProps {
@@ -11,11 +12,11 @@ interface CardCoursesProps {
 const CardCourses: React.FC<CardCoursesProps> = ({ title, author, img, points, rating }) => {
   return (
     <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow overflow-hidden mx-auto">
-      <div className="h-48 overflow-hidden">
-        <img src={img} alt={title} className="mx-auto mt-3 " />
+      <div className=" overflow-hidden">
+        <Image width={200} height={200} src={img} alt="course" className="mx-auto" />
       </div>
-      <div className="p-4">
-        <h1 className="text-xl font-semibold mb-2">{title}</h1>
+      <div className="">
+        <h1 className="text-sm font-semibold mb-2">{title}</h1>
         <p>{author}</p>
         <div className="flex justify-between">
           <div className="text-sm font-medium  justify-between">
