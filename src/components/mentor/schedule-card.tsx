@@ -16,7 +16,7 @@ import React from 'react';
 
 export default function ScheduleCard() {
   return (
-    <Card className="w-3/4">
+    <Card className="col-span-4">
       <CardHeader>
         <CardTitle className="text-xl">Mentoring Schedule</CardTitle>
       </CardHeader>

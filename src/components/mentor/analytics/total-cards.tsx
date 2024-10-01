@@ -3,7 +3,7 @@ import { History } from 'lucide-react';
 
 export function TotalPointsCard() {
   return (
-    <Card>
+    <Card className="col-span-2">
       <CardHeader>
         <CardTitle className="text-base font-medium flex items-center">
           <History
@@ -23,7 +23,7 @@ export function TotalPointsCard() {
 
 export function TotalVideosCard() {
   return (
-    <Card>
+    <Card className="col-span-2">
       <CardHeader>
         <CardTitle className="text-base font-medium flex items-center">
           <History
@@ -43,7 +43,7 @@ export function TotalVideosCard() {
 
 export function TotalSession() {
   return (
-    <Card>
+    <Card className="col-span-2">
       <CardHeader>
         <CardTitle className="text-base font-medium flex items-center">
           <History

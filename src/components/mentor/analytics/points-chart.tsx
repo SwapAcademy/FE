@@ -10,7 +10,7 @@ import {
   ChartTooltipContent,
 } from '@/components/ui/chart';
 
-export const description = 'A line chart';
+export const description = 'Points chart';
 
 const chartData = [
   { month: 'January', points: 186 },
@@ -19,6 +19,7 @@ const chartData = [
   { month: 'April', points: 73 },
   { month: 'May', points: 209 },
   { month: 'June', points: 214 },
+  { month: 'July', points: 198 },
 ];
 
 const chartConfig = {
@@ -30,17 +31,20 @@ const chartConfig = {
 
 export function PointsChart() {
   return (
-    <Card className="col-span-2">
+    <Card className="col-span-4">
       <CardHeader>
         <CardTitle className="text-xl font-semibold">Points Earned</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer
+          className="mx-auto max-h-[300px]"
+          config={chartConfig}
+        >
           <LineChart
             accessibilityLayer
             data={chartData}
             margin={{
-              left: 12,
+              left: -20,
               right: 12,
             }}
           >

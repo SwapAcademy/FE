@@ -23,8 +23,8 @@ import {
 export const description = 'A pie chart with a label list';
 
 const chartData = [
-  { status: 'completed', sessions: 275, fill: 'var(--color-completed)' },
-  { status: 'pending', sessions: 200, fill: 'var(--color-pending)' },
+  { status: 'completed', sessions: 20, fill: 'var(--color-completed)' },
+  { status: 'pending', sessions: 3, fill: 'var(--color-pending)' },
 ];
 
 const chartConfig = {
@@ -43,18 +43,26 @@ const chartConfig = {
 
 export function MentoringChart() {
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
+    <Card className="col-span-2">
+      <CardHeader>
         <CardTitle className="text-xl font-semibold">
           Mentoring Session
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
+      <CardContent>
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square"
+          className="mx-auto aspect-square max-h-[300px]"
         >
           <PieChart>
+            <ChartTooltip
+              content={
+                <ChartTooltipContent
+                  nameKey="sessions"
+                  hideLabel
+                />
+              }
+            />
             <Pie
               data={chartData}
               dataKey="sessions"

@@ -4,7 +4,7 @@ import { Medal, RadioTower, TvMinimalPlay } from 'lucide-react';
 
 export function MentoringCard() {
   return (
-    <Card className="w-full">
+    <Card className="col-span-2">
       <CardContent className="flex p-6">
         <div className="space-y-6">
           <h1 className="font-bold text-3xl">Start 1-on-1 Mentoring</h1>
@@ -23,7 +23,7 @@ export function MentoringCard() {
 
 export function UploadVideoCard() {
   return (
-    <Card className="w-full">
+    <Card className="col-span-2">
       <CardContent className="flex p-6">
         <div className="space-y-6">
           <h1 className="font-bold text-3xl">Upload Your Video Skill</h1>
@@ -42,7 +42,7 @@ export function UploadVideoCard() {
 
 export function LiveStreamCard() {
   return (
-    <Card className="w-full">
+    <Card className="col-span-2">
       <CardContent className="flex p-6">
         <div className="space-y-6">
           <h1 className="font-bold text-3xl">Start Live Stream</h1>
