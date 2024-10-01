@@ -26,27 +26,27 @@ import { usePathname } from 'next/navigation';
 let navItems = [
   {
     name: 'Courses',
-    href: '/mentor/courses',
+    href: '/dashboard/courses',
     icon: BookMarked,
   },
   {
     name: 'Live Courses',
-    href: '/mentor/live-courses',
+    href: '/dashboard/live-courses',
     icon: Radio,
   },
   {
     name: 'Learning Progress',
-    href: '/mentor/learning-progress',
+    href: '/dashboard/learning-progress',
     icon: FlagTriangleRight,
   },
   {
     name: 'My Points',
-    href: '/mentor/my-points',
+    href: '/dashboard/my-points',
     icon: Medal,
   },
   {
     name: 'Bookmarks',
-    href: '/mentor/bookmarks',
+    href: '/dashboard/bookmarks',
     icon: Bookmark,
   },
 ];
@@ -54,22 +54,22 @@ let navItems = [
 let mentorNav = [
   {
     name: 'Upload Course',
-    href: '/mentor/studio/upload-course',
+    href: '/dashboard/mentor/upload-course',
     icon: Upload,
   },
   {
     name: 'My Videos',
-    href: '/mentor/studio/my-videos',
+    href: '/dashboard/mentor/my-videos',
     icon: TvMinimalPlay,
   },
   {
     name: '1-on-1 Mentoring',
-    href: '/mentor/studio/mentoring',
+    href: '/dashboard/mentor/mentoring',
     icon: UsersRound,
   },
   {
     name: 'Analytics',
-    href: '/mentor/studio/analytics',
+    href: '/dashboard/mentor/analytics',
     icon: ChartNoAxesCombined,
   },
 ];
@@ -85,9 +85,9 @@ export default function SideNav() {
         <Link
           className={clsx(
             'group mentor-nav',
-            pathname === '/mentor/dashboard' ? 'bg-sky-500 text-white font-bold' : ''
+            pathname === '/dashboard' ? 'bg-sky-500 text-white font-bold' : ''
           )}
-          href="/mentor/dashboard"
+          href="/dashboard"
         >
           <LayoutDashboard size={20} />
           <span>Dashboard</span>
@@ -95,7 +95,7 @@ export default function SideNav() {
         <Separator />
         <div
           className={clsx(
-            pathname.startsWith('/mentor/studio')
+            pathname.startsWith('/dashboard/mentor')
               ? 'hidden'
               : 'flex flex-col gap-2'
           )}
@@ -118,14 +118,16 @@ export default function SideNav() {
         <Link
           className={clsx(
             'group mentor-nav',
-            pathname === '/mentor/studio' ? 'bg-sky-500 text-white font-bold' : ''
+            pathname === '/dashboard/mentor'
+              ? 'bg-sky-500 text-white font-bold'
+              : ''
           )}
-          href="/mentor/studio"
+          href="/dashboard/mentor"
         >
           <Clapperboard size={20} />
           <div className="w-full flex justify-between items-center">
             <span>Mentor Studio</span>
-            {pathname.startsWith('/mentor/studio') ? (
+            {pathname.startsWith('/dashboard/mentor') ? (
               <ChevronDown size={20} />
             ) : (
               <ChevronRight size={20} />
@@ -134,7 +136,7 @@ export default function SideNav() {
         </Link>
         <div
           className={clsx(
-            pathname.startsWith('/mentor/studio')
+            pathname.startsWith('/dashboard/mentor')
               ? 'flex flex-col gap-2 ml-8'
               : 'hidden'
           )}
@@ -158,9 +160,11 @@ export default function SideNav() {
           <Link
             className={clsx(
               'group mentor-nav',
-              pathname === '/mentor/settings' ? 'bg-sky-500 text-white font-bold' : ''
+              pathname === '/dashboard/settings'
+                ? 'bg-sky-500 text-white font-bold'
+                : ''
             )}
-            href="/mentor/settings"
+            href="/dashboard/settings"
           >
             <Settings size={20} />
             <span>Settings</span>
@@ -168,9 +172,11 @@ export default function SideNav() {
           <Link
             className={clsx(
               'group mentor-nav',
-              pathname === '/mentor/help' ? 'bg-sky-500 text-white font-bold' : ''
+              pathname === '/dashboard/help'
+                ? 'bg-sky-500 text-white font-bold'
+                : ''
             )}
-            href="/mentor/help"
+            href="/dashboard/help"
           >
             <CircleHelp size={20} />
             <span>Help</span>

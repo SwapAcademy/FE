@@ -5,10 +5,10 @@ import {
   PointsEarnedCard,
   UploadVideoCard,
   VideoPublishedCard,
-} from '@/components/mentor/studio/cards';
-import ScheduleCard from '@/components/mentor/studio/schedule-card';
-import TopCoursesCard from '@/components/mentor/studio/top-courses-card';
-import TopRatedCard from '@/components/mentor/studio/top-rated-card';
+} from '@/components/mentor/cards';
+import ScheduleCard from '@/components/mentor/schedule-card';
+import TopCoursesCard from '@/components/mentor/top-courses-card';
+import TopRatedCard from '@/components/mentor/top-rated-card';
 
 export default function Page() {
   return (
