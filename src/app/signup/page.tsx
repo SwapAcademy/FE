@@ -9,35 +9,58 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { AlertCircle } from "lucide-react";
 
 export default function SignUp() {
-  const [fullname, setFullname] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate sign-up logic
+
+    // Validasi form
     if (password !== confirmPassword) {
       setError("Passwords do not match. Please try again.");
-    } else if (fullname === "" || email === "" || password === "") {
+      return;
+    } else if (name === "" || email === "" || password === "") {
       setError("All fields are required.");
-    } else if (email === "user@example.com" && password === "password") {
-      // Successful sign-up (example)
+      return;
+    } else if (!agreeTerms) {
+      setError("You must agree to the terms and conditions.");
+      return;
+    }
+
+    // nembak ke backend
+    const res = await fetch("https://be-swap-academy.nioke-studio.my.id/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }), // Schema data registrasi
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setSuccess("Registration successful! You can now log in.");
       setError("");
-      alert("Sign up successful!");
+      // Mungkin bisa mengarahkan pengguna ke halaman login
     } else {
-      // Failed sign-up
-      setError("Invalid credentials or terms not accepted. Please try again.");
+      setError(data.message || "Registration failed. Please try again.");
+      setSuccess("");
     }
   };
 
   return (
     <div className="flex min-h-screen bg-gray-100">
       <div className="hidden lg:block lg:w-1/2 relative">
-        {/* Images 1*/}
-
+        {/* Gambar 1 */}
         <div className="h-full w-full flex flex-col justify-between items-center">
           <div className="relative">
             <Image src="/signin_1.svg" width={800} height={300} objectFit="cover" alt="People collaborating and learning" />
@@ -66,30 +89,18 @@ export default function SignUp() {
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
                 <legend>Full Name</legend>
-                <label htmlFor="fullname" className="sr-only">
-                  Full name
-                </label>
-                <Input id="fullname" name="fullname" type="text" required className="rounded-t-md" placeholder="Full name" value={fullname} onChange={(e) => setFullname(e.target.value)} />
+                <Input id="name" name="name" type="text" required className="rounded-t-md" placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} />
               </div>
               <div>
                 <legend>Email Address</legend>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <Input id="email-address" name="email" type="email" autoComplete="email" required className="" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Input id="email-address" name="email" type="email" autoComplete="email" required placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div>
                 <legend>Password</legend>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <Input id="password" name="password" type="password" autoComplete="new-password" required className="" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <Input id="password" name="password" type="password" autoComplete="new-password" required placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
               <div>
                 <legend>Confirm Password</legend>
-                <label htmlFor="confirm-password" className="sr-only">
-                  Confirm Password
-                </label>
                 <Input id="confirm-password" name="confirm-password" type="password" required placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
               </div>
               <div>
@@ -99,13 +110,11 @@ export default function SignUp() {
               </div>
             </div>
 
-            {/* Gap between "Sign Up" and "Or Continue With" */}
             <div className="mt-4 text-center">
               <p>Or Continue With</p>
             </div>
 
-            {/* Gap for Google button */}
-            <Button type="submit" className="w-full mt-2 bg-white hover:bg-sky-500 hover:text-white text-black gap-1">
+            <Button type="button" className="w-full mt-2 bg-white hover:bg-sky-500 hover:text-white text-black gap-1">
               <Image src="/google.svg" width={20} height={20} alt="Google logo" />
               <span>Google</span>
             </Button>
@@ -131,6 +140,11 @@ export default function SignUp() {
                 <AlertCircle className="flex-shrink-0 inline w-4 h-4 mr-3" />
                 <span className="sr-only">Error</span>
                 <div>{error}</div>
+              </div>
+            )}
+            {success && (
+              <div className="flex items-center p-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
+                <div>{success}</div>
               </div>
             )}
           </form>

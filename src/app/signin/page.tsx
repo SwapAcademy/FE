@@ -5,33 +5,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { AlertCircle } from "lucide-react";
+import { signIn } from "next-auth/react";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate sign-in logic
-    if (email === "user@example.com" && password === "password") {
-      // Successful sign-in
-      setError("");
-      alert("Sign in successful!");
+
+    const result = await signIn("credentials", {
+      redirect: true,
+      email: email,
+      password: password,
+      callbackUrl: "/dashboard",
+    });
+
+    if (result?.error) {
+      setError(result.error);
     } else {
-      // Failed sign-in
-      setError("Invalid email or password. Please try again.");
+      setError("");
     }
   };
 
   return (
     <div className="flex min-h-screen bg-gray-100">
       <div className="hidden lg:block lg:w-1/2 relative">
-        {/* Images 1*/}
-
+        {/* Images */}
         <div className="h-full w-full flex flex-col justify-between items-center">
           <div className="relative">
             <Image src="/signin_1.svg" width={800} height={300} objectFit="cover" alt="People collaborating and learning" />
@@ -54,7 +56,7 @@ export default function SignIn() {
           </div>
           <div>
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Hello, Welcome Back!</h2>
-            <p className="mt-2 text-sm text-gray-600">log in and keep growing</p>
+            <p className="mt-2 text-sm text-gray-600">Log in and keep growing</p>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md shadow-sm -space-y-px">
@@ -79,19 +81,17 @@ export default function SignIn() {
               </div>
             </div>
 
-            {/* Gap between "Log in" and "Or Continue With" */}
             <div className="mt-4 text-center">
               <p>Or Continue With</p>
             </div>
 
-            {/* Gap for Google button */}
-            <Button type="submit" className="w-full mt-2 bg-white hover:bg-sky-500 hover:text-white text-black gap-1">
+            <Button type="button" className="w-full mt-2 bg-white hover:bg-sky-500 hover:text-white text-black gap-1">
               <Image src="/google.svg" width={20} height={20} alt="Google logo" />
               <span>Google</span>
             </Button>
 
             <div className="text-center">
-              <p>Dont have an account?</p>
+              <p>Don't have an account?</p>
               <span className="text-sm">
                 <Link href="/signup" className="font-medium text-sky-500 hover:text-teal-500">
                   Register
