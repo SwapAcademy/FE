@@ -119,7 +119,7 @@ export default function MyVideosTable() {
   );
 }
 
-function VideoThumbnail() {
+export function VideoThumbnail() {
   return (
     <svg
       width="150"

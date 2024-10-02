@@ -37,7 +37,7 @@ export function PointsChart() {
       </CardHeader>
       <CardContent>
         <ChartContainer
-          className="mx-auto max-h-[300px]"
+          className="mx-auto w-full max-h-[300px]"
           config={chartConfig}
         >
           <LineChart
