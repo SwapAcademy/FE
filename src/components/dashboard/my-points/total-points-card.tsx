@@ -30,7 +30,7 @@ export default function TotalPointsCard() {
   );
 }
 
-function MedalLogo() {
+export function MedalLogo() {
   return (
     <svg
       width="61"
