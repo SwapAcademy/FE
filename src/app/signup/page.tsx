@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import Swal from "sweetalert2";
 import { AlertCircle } from "lucide-react";
 
 export default function SignUp() {
@@ -32,7 +33,7 @@ export default function SignUp() {
       return;
     }
 
-    // nembak ke backend
+    // Nembak ke backend
     const res = await fetch("https://be-swap-academy.nioke-studio.my.id/api/register", {
       method: "POST",
       headers: {
@@ -50,17 +51,38 @@ export default function SignUp() {
     if (res.ok) {
       setSuccess("Registration successful! You can now log in.");
       setError("");
-      // Mungkin bisa mengarahkan pengguna ke halaman login
+
+      // SweetAlert success
+      Swal.fire({
+        title: "Success!",
+        text: "Registration successful! You can now log in.",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      // Reset form setelah berhasil
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setAgreeTerms(false);
     } else {
       setError(data.message || "Registration failed. Please try again.");
       setSuccess("");
+
+      // SweetAlert error
+      Swal.fire({
+        title: "Error!",
+        text: data.message || "Registration failed. Please try again.",
+        icon: "error",
+        confirmButtonText: "Try Again",
+      });
     }
   };
 
   return (
     <div className="flex min-h-screen bg-gray-100">
       <div className="hidden lg:block lg:w-1/2 relative">
-        {/* Gambar 1 */}
         <div className="h-full w-full flex flex-col justify-between items-center">
           <div className="relative">
             <Image src="/signin_1.svg" width={800} height={300} objectFit="cover" alt="People collaborating and learning" />
